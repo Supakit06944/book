@@ -9,5 +9,6 @@ const secondProductList = [
   { id: 3, name: "Tablet", price: 500 },
   { id: 4, name: "Headphones", price: 150 },
 ];
-
-// เริ่มเขียนโค้ดตรงนี้
+ 
+let newProductList = [...firstProductList,...secondProductList]
+console.log(newProductList)
