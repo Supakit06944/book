@@ -1,21 +1,14 @@
 // Question #8: Fetching User List from Server
 
-
-const information = ()=>{
-    return fetch("https://jsonplaceholder.typicode.com/users")
-} 
-const handleResponse = (response) => {
-    return response.json();
-    };
-
-const onSuccess = (data)=>{ 
+const getInformation = async()=>{
+    const imformation = await fetch("https://jsonplaceholder.typicode.com/users")
+    const response = await imformation.json()
     let allName = []
-    for(let i of data){
-        allName.push([i.name])
+    for(let i of response){
+        allName.push(i.name)
       }
-    console.log(allName)
-    }
+    return allName
+} 
 
-
-let newUser = information().then(handleResponse).then(onSuccess)
- console.log(information())
+let newUser = await getInformation()
+ console.log(newUser)
